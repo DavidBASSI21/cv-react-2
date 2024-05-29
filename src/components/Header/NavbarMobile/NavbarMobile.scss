@@ -1,0 +1,47 @@
+@use '../../../styles/variables';
+
+.navbar-mobile-container {
+  position: relative;
+  // width: 50%;
+  color: variables.$lightTextColor;
+  background-color: variables.$emphaseColor;
+  // top: 0px;
+  left: 45vw;
+  width: 55vw;
+  height: 12vh;
+  // top: 0;
+  // right: 0; /* Position initiale en dehors de la vue */
+  transform: translateX(555px);
+  transition: 0.7s;
+  z-index: 100;
+  overflow: hidden;
+  &--translated {
+    height: 105vh;
+    z-index: 1000;
+    transform: translateX(0);
+    /* Se déplace vers la gauche pour entrer dans la vue */
+    transition: 0.5s;
+  }
+
+  .navbar-mobile-links {
+    padding-top: variables.$gutter;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    gap: variables.$gutter;
+    font-size: variables.$fsStandard * 1.2;
+  }
+
+  .navbar-mobile-link {
+    transition: 0.5s;
+
+    &:hover {
+      scale: 1.1;
+      transition: 0.5s;
+    }
+    &:active {
+      scale: 0.95;
+    }
+  }
+}

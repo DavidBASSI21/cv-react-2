@@ -1,0 +1,109 @@
+@use '../../styles/variables';
+
+$backgroundDarkColor: #232323;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 2em auto;
+  width: 75%;
+  height: 500px;
+  border-radius: 30px;
+  align-items: baseline;
+  justify-content: flex-end;
+  &--dark {
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
+  }
+  &--light {
+    background: #fcfcfc;
+    box-shadow: 15px 15px 30px rgb(0, 0, 0, 0.09),
+      -15px -15px 30px rgb(0, 0, 0, 0.09);
+  }
+}
+
+.card-picture {
+  display: flex;
+  width: 90%;
+  height: 48%;
+  border-radius: 1.6em;
+  // border-top-left-radius: 1.6em;
+  // aspect-ratio: 1/1;
+  // border-radius: 2em;
+  margin: 0 auto variables.$gutter * 1.1;
+  box-shadow: -15px -15px 30px rgb(0, 0, 0, 0.09);
+
+  background-color: red;
+}
+
+.card-title-container {
+  justify-content: center;
+  margin-bottom: variables.$gutter * 1.4;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  .card-title {
+    margin-bottom: variables.$gutter * 0.4;
+    font-size: variables.$fsStandard * 1.5;
+    font-weight: 700;
+  }
+  .card-subtitle {
+    font-weight: 400;
+    font-size: variables.$fsStandard * 1.2;
+  }
+  // .card-titles {
+  //   text-align: center;
+  // }
+}
+
+.card-download-link-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  // align-items: flex-end;
+  text-align: center;
+}
+.card-download-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15em;
+  height: 4em;
+  border-radius: 30em;
+  font-size: variables.$fsStandard * 0.8;
+  margin-bottom: variables.$gutter * 2;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 3px 5px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  color: variables.$darkTextColor;
+  transition: color 0.5s ease;
+  &--dark {
+    color: variables.$lightTextColor;
+    box-shadow: 6px 6px 12px rgb(25, 25, 25), -6px -6px 12px rgb(60, 60, 60);
+  }
+  &:active {
+    transition: 0.7s;
+    transform: scale(0.95);
+  }
+  &::before {
+    content: '';
+    width: 0;
+    height: 100%;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #8758ef 0%, #c500f6 100%);
+    transition: width 0.5s ease;
+    z-index: -1;
+  }
+  &:hover {
+    color: white;
+  }
+  &:hover::before {
+    width: 100%;
+  }
+}

@@ -1,26 +1,32 @@
+import { useEffect, useState } from 'react';
 import logo from '../../assets/logo.svg';
+import Header from '../Header/Header';
+import NavbarMobile from '../Header/NavbarMobile/NavbarMobile';
+import Home from '../Home/Home';
 
 import './App.scss';
 
 function App() {
+  // Initialise l'état à partir de localStorage
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem('darkMode');
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
+
+  // Mettre à jour le localStorage et la classe du body quand isDarkMode change
+  useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [isDarkMode]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-
-        <p>
-          Edit <code>src/components/App/App.jsx</code> and save to reload.
-        </p>
-
-        <a
-          className="App-link"
-          href="https://react.dev/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+      <Home isDarkMode={isDarkMode} />
     </div>
   );
 }

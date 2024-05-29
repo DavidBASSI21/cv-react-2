@@ -1,0 +1,47 @@
+@use '../../styles/variables';
+
+.header-container {
+  height: 12vh;
+  display: flex;
+  width: 100vw;
+  overflow-x: hidden;
+  .header-picture-container {
+    width: 30%;
+    display: flex;
+    .header-picture {
+      height: 85%;
+      aspect-ratio: 1/1;
+      margin: auto;
+      background-image: url('https://mighty.tools/mockmind-api/content/cartoon/9.jpg');
+      background-size: cover;
+      border-radius: 100px;
+      border: 1px solid #212121;
+    }
+  }
+  .toggles-container {
+    position: relative;
+    width: 70%;
+  }
+  .header-toggle-darkMode {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 25%;
+  }
+  .header-toggle-burger {
+    position: absolute;
+    top: 50%;
+    left: 89%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    transition: 0.5s;
+    &--translated {
+      transition: 0.5s;
+      left: 5%;
+    }
+  }
+}
+.div {
+  overflow-x: hidden;
+  margin-top: -12vh;
+}
