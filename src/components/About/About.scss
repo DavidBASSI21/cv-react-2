@@ -1,0 +1,109 @@
+@use '../../styles/variables';
+
+.about-container {
+  display: flex;
+  background-color: #111f24;
+  background-color: #fefff6;
+  flex-direction: column;
+  width: 100%;
+  // justify-content: center;
+  align-items: center;
+  // position: relative;
+  // position: absolute;
+  // top: 95vh;
+
+  &-title,
+  &-paragraph {
+    margin-bottom: variables.$gutter;
+    color: #111f24;
+    width: 90%;
+
+    // justify-content: start;
+    display: flex;
+    // flex-direction: column;
+    // background-color: red;
+  }
+  &-paragraph {
+    flex-direction: column;
+    // margin-bottom: 500px;
+    line-height: 1.4em;
+    letter-spacing: 0.03em;
+  }
+}
+
+.about {
+  &-title {
+    font-size: variables.$fsStandard * 2.5;
+    padding: 5px 12px;
+    font-weight: 700;
+    &-img {
+      width: 35px;
+      -webkit-animation: wave-hand 2.5s inifinite;
+      transform-origin: 70% 70%;
+      display: inline-block;
+      animation: wave-hand 2s infinite;
+    }
+  }
+  &-paragraph {
+    margin-bottom: variables.$gutter * 0.5;
+    padding: 5px 12px;
+    text-align: justify;
+    hyphens: auto;
+    &-strong {
+      font-weight: 600;
+    }
+  }
+}
+
+@-webkit-keyframes wave-hand {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  65% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes wave-hand {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(18deg);
+  }
+  65% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}

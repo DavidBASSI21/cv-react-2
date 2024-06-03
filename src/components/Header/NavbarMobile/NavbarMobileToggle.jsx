@@ -13,9 +13,21 @@ const NavbarMobileToggle = ({ isNavbarHidden, setIsNavbarHidden }) => {
           }}
         />
         <label className="toggle" htmlFor="checkbox">
-          <div className="bar bar--top" />
-          <div className="bar bar--middle" />
-          <div className="bar bar--bottom" />
+          <div
+            className={
+              isNavbarHidden ? 'bar bar--top' : 'bar bar--top bar--change'
+            }
+          />
+          <div
+            className={
+              isNavbarHidden ? 'bar bar--middle' : 'bar bar--middle bar--change'
+            }
+          />
+          <div
+            className={
+              isNavbarHidden ? 'bar bar--bottom' : 'bar bar--bottom bar--change'
+            }
+          />
         </label>
       </div>
     </div>

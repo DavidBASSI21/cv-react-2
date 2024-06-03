@@ -3,8 +3,10 @@ import logo from '../../assets/logo.svg';
 import Header from '../Header/Header';
 import NavbarMobile from '../Header/NavbarMobile/NavbarMobile';
 import Home from '../Home/Home';
+import About from '../About/About';
 
 import './App.scss';
+import Experiences from '../Experiences/Experiences';
 
 function App() {
   // Initialise l'état à partir de localStorage
@@ -25,8 +27,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+      {/* <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} /> */}
       <Home isDarkMode={isDarkMode} />
+      <About />
+      <Experiences />
     </div>
   );
 }

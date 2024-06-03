@@ -8,22 +8,26 @@
   // top: 0px;
   left: 45vw;
   width: 55vw;
+  // background-color: red;
+  display: flex;
   height: 12vh;
   // top: 0;
   // right: 0; /* Position initiale en dehors de la vue */
   transform: translateX(555px);
   transition: 0.7s;
-  z-index: 100;
+  z-index: 5;
   overflow: hidden;
   &--translated {
     height: 105vh;
-    z-index: 1000;
+    z-index: 5;
+    position: absolute;
     transform: translateX(0);
     /* Se déplace vers la gauche pour entrer dans la vue */
     transition: 0.5s;
   }
 
   .navbar-mobile-links {
+    margin-top: 3em;
     padding-top: variables.$gutter;
     display: flex;
     width: 100%;

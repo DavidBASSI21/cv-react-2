@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 import './Header.scss';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import NavbarMobileToggle from './NavbarMobile/NavbarMobileToggle';
 import ToggleDarkMode from './ToggleDarkMode';
 import NavbarMobile from './NavbarMobile/NavbarMobile';
@@ -9,9 +9,17 @@ import NavbarMobile from './NavbarMobile/NavbarMobile';
 const Header = ({ isDarkMode, setIsDarkMode }) => {
   const [isNavbarHidden, setIsNavbarHidden] = useState(true);
   console.log(isNavbarHidden);
+  const ref = useRef();
+
   return (
     <>
-      <header className="header-container">
+      <header
+        className={
+          isDarkMode
+            ? 'header-container header-container--dark'
+            : 'header-container'
+        }
+      >
         <div className="header-picture-container">
           <div className="header-picture" />
         </div>
@@ -39,7 +47,10 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
         </div>
       </header>
       <div className="div">
-        <NavbarMobile isNavbarHidden={isNavbarHidden} />
+        <NavbarMobile
+          isNavbarHidden={isNavbarHidden}
+          setIsNavbarHidden={setIsNavbarHidden}
+        />
       </div>
     </>
   );

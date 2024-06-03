@@ -1,17 +1,26 @@
 @use '../../styles/variables';
 
 .header-container {
-  height: 12vh;
+  position: static;
+  top: 0px;
+  background-color: variables.$mainLightColor;
+
+  height: 6vh;
   display: flex;
   width: 100vw;
   overflow-x: hidden;
+  z-index: 5;
+  &--dark {
+    background-color: variables.$mainDarkColor;
+  }
   .header-picture-container {
     width: 30%;
+
     display: flex;
     .header-picture {
       height: 85%;
       aspect-ratio: 1/1;
-      margin: auto;
+      margin: auto 0 auto 1em;
       background-image: url('https://mighty.tools/mockmind-api/content/cartoon/9.jpg');
       background-size: cover;
       border-radius: 100px;
@@ -33,11 +42,13 @@
     top: 50%;
     left: 89%;
     transform: translate(-50%, -50%);
-    z-index: 10;
+    z-index: 20000;
     transition: 0.5s;
     &--translated {
       transition: 0.5s;
-      left: 5%;
+      // left: 5%;
+      color: white;
+      z-index: 20000;
     }
   }
 }

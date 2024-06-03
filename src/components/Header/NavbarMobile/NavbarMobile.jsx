@@ -1,11 +1,26 @@
 import PropTypes from 'prop-types';
 import './NavbarMobile.scss';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 import NavbarMobileToggle from './NavbarMobileToggle';
 
-const NavbarMobile = ({ isNavbarHidden }) => {
+const NavbarMobile = ({ isNavbarHidden, setIsNavbarHidden }) => {
+  // const ref = useRef(); // Créer une référence useRef
+
+  // useEffect(() => {
+  //   const checkIfClickedOutside = (e) => {
+  //     if (!isNavbarHidden && ref.current && !ref.current.contains(e.target)) {
+  //       setIsNavbarHidden(true);
+  //     }
+  //   };
+  //   document.addEventListener('mousedown', checkIfClickedOutside);
+
+  //   return () => {
+  //     document.removeEventListener('mousedown', checkIfClickedOutside);
+  //   };
+  // }, [isNavbarHidden, setIsNavbarHidden, ref]); // Ajouter ref dans le tableau de dépendances
+
   return (
     <nav
       className={
@@ -13,6 +28,7 @@ const NavbarMobile = ({ isNavbarHidden }) => {
           ? 'navbar-mobile-container'
           : 'navbar-mobile-container navbar-mobile-container--translated'
       }
+      // ref={ref}
     >
       <ul className="navbar-mobile-links">
         <NavLink className="navbar-mobile-link" to="/">
