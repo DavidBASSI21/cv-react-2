@@ -7,15 +7,18 @@ const Experience = ({ iconUrl, title, location, date, description }) => {
   const markup = { __html: DOMPurify.sanitize(description) };
 
   return (
-    <div className="experience-container">
+    <div className="individualExperience-container">
       <span
-        className="experience-bullet"
+        className="individualExperience-bullet"
         style={{ backgroundImage: `url(${iconUrl})` }}
       />
-      <h2 className="experience-title">{title}</h2>
-      <h3 className="experience-location">{location} </h3>
-      <h4 className="experience-date">{date}</h4>
-      <p className="experience-description" dangerouslySetInnerHTML={markup} />
+      <h2 className="individualExperience-title">{title}</h2>
+      <h3 className="individualExperience-location">{location} </h3>
+      <h4 className="individualExperience-date">{date}</h4>
+      <p
+        className="individualExperience-description"
+        dangerouslySetInnerHTML={markup}
+      />
     </div>
   );
 };

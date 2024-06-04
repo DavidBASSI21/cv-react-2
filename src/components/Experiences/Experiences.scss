@@ -1,86 +1,224 @@
 @use '../../styles/variables';
 
 .experiences-background {
-  background-color: #111f24;
+  background-color: #121f23;
+  padding: 1em 0;
+}
+
+.experiences-title {
+  font-size: variables.$fsStandard * 2;
+  color: variables.$lightTextColor;
+  width: 100vw;
+  font-weight: 600;
+  text-align: center;
+
+  margin-top: 1em;
+  &--hidden {
+    opacity: 0;
+  }
+}
+.focus-in-contract {
+  -webkit-animation: focus-in-contract 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: focus-in-contract 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .experiences-container {
-  overflow-x: hidden;
-  width: 100%;
+  color: variables.$lightTextColor;
+  background-color: #121f23;
   display: flex;
-  flex-direction: column;
-  gap: 1em;
+  justify-content: flex-end;
+  gap: variables.$gutter;
+  margin: variables.$gutter * 2 0;
+  // padding: 2em 0;
   position: relative;
-
   .line {
-    position: relative;
-    margin-left: 3em;
-    border-left: 1px solid white;
-    padding-left: 20px;
-    background-color: #111f24;
-    display: flex;
-    align-items: end;
-    flex-direction: column;
-    margin: 3em 0 3em 3em;
-    width: 90%;
-    top: 0;
+    position: absolute;
+    height: 100%;
+    left: 10%;
+    width: 2px;
+    background-color: #fff;
   }
-  .experience {
+  .experience-container {
+    // background-color: red;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 30px 0;
+    width: 90%;
+    gap: variables.$gutter * 0.2;
+  }
+  .individualExperience {
     &-container {
+      // background-color: teal;
+
       position: relative;
-      left: -12.5%;
-      color: variables.$lightTextColor;
-      width: 95%;
+      width: 87%;
+
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      margin: variables.$gutter 0;
-      padding: 0 20px 0 30px;
+      gap: variables.$gutter * 0.2;
+      margin-left: 8%;
     }
     &-bullet {
-      border: 2px solid white;
       position: absolute;
-      left: -6.5%;
-      top: -10%;
-      transform: translateY(50%);
-      height: 40px;
+      left: -8.9%;
+      // top: 0;
+      transform: translateX(-50%);
       width: 40px;
-      background-color: white;
+      aspect-ratio: 1/1;
+      border-radius: 40px;
       background-size: contain;
-      background-repeat: no-repeat;
-      border-radius: 20px;
+      border: 2px solid variables.$lightTextColor;
     }
-
     &-title {
       position: relative;
       font-weight: 600;
       font-size: variables.$fsStandard * 1;
-      margin-bottom: variables.$gutter * 0.3;
+      margin-bottom: variables.$gutter * 0.2;
     }
     &-location {
       font-size: variables.$fsStandard;
-      margin-bottom: variables.$gutter * 0.3;
+      margin-bottom: variables.$gutter * 0.2;
     }
     &-date {
       font-size: variables.$fsStandard * 0.8;
       font-style: italic;
-      margin-bottom: variables.$gutter * 0.3;
+      margin-bottom: variables.$gutter * 0.2;
     }
     &-description {
       text-align: justify;
       hyphens: auto;
       line-height: 1.2;
+      margin-bottom: variables.$gutter * 0.9;
     }
   }
-  .line .experience-container:nth-of-type(1) .experience-bullet {
-    top: -14%;
+}
+
+@-webkit-keyframes focus-in-contract {
+  0% {
+    letter-spacing: 1em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
   }
-  .line .experience-container:nth-of-type(2) .experience-bullet {
-    top: -11%;
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
   }
-  .line .experience-container:nth-of-type(3) .experience-bullet {
-    top: -9%;
+}
+@keyframes focus-in-contract {
+  0% {
+    letter-spacing: 1em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
   }
-  .line .experience-container:nth-of-type(4) .experience-bullet {
-    top: -29%;
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
   }
+}
+
+// .experiences-background {
+//   background-color: #111f24;
+// }
+// .experiences-container {
+//   overflow-x: hidden;
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 1em;
+//   position: relative;
+
+//   .line {
+//     position: relative;
+//     margin-left: 3em;
+//     border-left: 1px solid white;
+//     padding-left: 20px;
+//     background-color: #111f24;
+//     display: flex;
+//     align-items: end;
+//     flex-direction: column;
+//     margin: 3em 0 3em 3em;
+//     width: 90%;
+//     top: 0;
+//   }
+//   .experience {
+//     &-container {
+//       position: relative;
+//       left: -12.5%;
+//       color: variables.$lightTextColor;
+//       width: 95%;
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: flex-end;
+//       margin: variables.$gutter 0;
+//       padding: 0 20px 0 30px;
+//     }
+//     &-bullet {
+//       border: 2px solid white;
+//       position: absolute;
+//       left: -6.5%;
+//       top: -10%;
+//       transform: translateY(50%);
+//       height: 40px;
+//       width: 40px;
+//       background-color: white;
+//       background-size: contain;
+//       background-repeat: no-repeat;
+//       border-radius: 20px;
+//     }
+
+//     &-title {
+//       position: relative;
+//       font-weight: 600;
+//       font-size: variables.$fsStandard * 1;
+//       margin-bottom: variables.$gutter * 0.3;
+//     }
+//     &-location {
+//       font-size: variables.$fsStandard;
+//       margin-bottom: variables.$gutter * 0.3;
+//     }
+//     &-date {
+//       font-size: variables.$fsStandard * 0.8;
+//       font-style: italic;
+//       margin-bottom: variables.$gutter * 0.3;
+//     }
+//     &-description {
+//       text-align: justify;
+//       hyphens: auto;
+//       line-height: 1.2;
+//     }
+//   }
+
+.experience-container
+  .individualExperience-container:nth-of-type(1)
+  .individualExperience-bullet {
+  top: -5%;
+
+  // height: 80px;
+}
+
+.experience-container
+  .individualExperience-container:nth-of-type(2)
+  .individualExperience-bullet {
+  top: -4%;
+
+  // height: 80px;
+}
+.experience-container
+  .individualExperience-container:nth-of-type(3)
+  .individualExperience-bullet {
+  top: -3%;
+
+  // height: 80px;
+}
+.experience-container
+  .individualExperience-container:nth-of-type(4)
+  .individualExperience-bullet {
+  top: -7.5%;
+
+  // height: 80px;
 }
