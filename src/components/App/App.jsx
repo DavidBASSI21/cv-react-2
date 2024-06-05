@@ -1,14 +1,19 @@
 import { useEffect, useState } from 'react';
-import logo from '../../assets/logo.svg';
-import Header from '../Header/Header';
-import NavbarMobile from '../Header/NavbarMobile/NavbarMobile';
+// import logo from '../../assets/logo.svg';
+// import Header from '../Header/Header';
+// import NavbarMobile from '../Header/NavbarMobile/NavbarMobile';
+import Skills from '../Skills/Skills';
 import Home from '../Home/Home';
 import About from '../About/About';
 
 import './App.scss';
 import Experiences from '../Experiences/Experiences';
+import Loader from '../Loader/Loader';
 
 function App() {
+  // Initialise l'état par défaut du loader
+  const [isLoading, setIsLoading] = useState(true);
+
   // Initialise l'état à partir de localStorage
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedMode = localStorage.getItem('darkMode');
@@ -25,11 +30,23 @@ function App() {
     }
   }, [isDarkMode]);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <div className="App">
       {/* <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} /> */}
       <Home isDarkMode={isDarkMode} />
       <About />
+      <Skills />
       <Experiences />
     </div>
   );

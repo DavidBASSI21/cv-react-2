@@ -7,7 +7,7 @@ const Experiences = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const handleScroll = () => {
-    if (window.scrollY > 750) {
+    if (window.scrollY > 1160) {
       setScrolled(true);
     } else {
       setScrolled(false);
