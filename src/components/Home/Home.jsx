@@ -6,6 +6,16 @@ import pp from '../../assets/pictures/pp.webp';
 const Home = ({ isDarkMode }) => {
   console.log(cv);
 
+  const scrollToContactElement = () => {
+    const contactElement = document.getElementById('contact');
+    if (contactElement) {
+      window.scrollTo({
+        top: contactElement.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     /*
     <div className={isDarkMode ? 'card card--dark' : 'card card--light'}>
@@ -40,16 +50,21 @@ const Home = ({ isDarkMode }) => {
         className="home-header"
         style={{
           backgroundImage: `url(${pp})`,
-          backgroundSize: 'cover',
+          backgroundSize: '140%',
           backgroundPosition: 'center',
         }}
       />
+
       <div className="home-title-container">
         <h1 className="home-title">David Bassi</h1>
         <h2 className="home-subtitle">Développeur web </h2>
       </div>
       <div className="buttons-container">
-        <button type="button" className="button button-contact">
+        <button
+          type="button"
+          className="button button-contact"
+          onClick={scrollToContactElement}
+        >
           <span>Contactez-moi</span>
         </button>
         <button type="button" className="button button-cv">

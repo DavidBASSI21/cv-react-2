@@ -5,12 +5,17 @@ import Experience from './Experience';
 
 const Experiences = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [showElements, setShowElements] = useState(false);
 
   const handleScroll = () => {
-    if (window.scrollY > 1160) {
+    if (window.scrollY > 556) {
       setScrolled(true);
+      setTimeout(() => {
+        setShowElements(true);
+      }, 700);
     } else {
       setScrolled(false);
+      setShowElements(false);
     }
   };
 
@@ -22,6 +27,7 @@ const Experiences = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
   return (
     <div className="experiences-background">
       <h2
@@ -34,7 +40,7 @@ const Experiences = () => {
         Expériences
       </h2>
       <div className="experiences-container">
-        <div className="line" />
+        <div className={showElements ? 'line fade-in-bottom' : ''} />
         <div className="experience-container">
           {experiences.map((experience) => (
             <Experience key={experience.id} {...experience} />

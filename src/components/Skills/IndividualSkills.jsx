@@ -21,23 +21,14 @@ const IndividualSkill = ({ IconComponent, name }) => {
   });
   return (
     <div className="individualSkill">
-      <div
-        className={
-          scrolled
-            ? 'individualSkill-picture scale-in-ver-top'
-            : 'individualSkill-picture--hidden'
-        }
-      >
-        <IconComponent size="1em" className="individualSkill-icon" />
+      <div>
+        <IconComponent
+          size="1em"
+          // className="individualSkill-icon"
+          className="individualSkill-icon"
+        />
       </div>
-
-      <div
-        className={
-          scrolled ? 'individualSkill-stack ' : 'individualSkill-stack--hidden'
-        }
-      >
-        {name}
-      </div>
+      <div className="individualSkill-stack ">{name}</div>
     </div>
   );
 };

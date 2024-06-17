@@ -12,11 +12,11 @@ const About = () => {
         <p className="about-paragraph">
           Bienvenue ! Je m&apos;appelle David,{' '}
           <strong className="about-paragraph-strong">
-            développeur web Front-End {'  '}
+            développeur web junior {'  '}
           </strong>
           spécialisé {'  '}
-          <strong className="about-paragraph-strong"> React</strong>,
-          actuellement étudiant au sein de l&apos;
+          <strong className="about-paragraph-strong"> React</strong>, ayant
+          étudié au sein de l&apos;
           <strong className="about-paragraph-strong">école O&apos;clock</strong>
           .
         </p>
@@ -42,10 +42,9 @@ const About = () => {
           <strong className="about-paragraph-strong">
             forte conscience professionnelle
           </strong>
-          , j&apos;aime me surpasser pour aller au-delà des attentes des clients
-          avec lesquels je travaille. Je sais m&apos;investir pleinement, et
-          être proactif dans un projet, afin de mener celui-ci à son terme, tout
-          en veillant à respecter les exigences coûts, qualités et délais.
+          , je sais m&apos;investir pleinement, et être proactif dans un projet,
+          afin de mener celui-ci à son terme, tout en veillant à respecter les
+          exigences coûts, qualités et délais.
         </p>
       </div>
     </div>

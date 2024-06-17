@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 // import logo from '../../assets/logo.svg';
 // import Header from '../Header/Header';
 // import NavbarMobile from '../Header/NavbarMobile/NavbarMobile';
@@ -9,6 +10,10 @@ import About from '../About/About';
 import './App.scss';
 import Experiences from '../Experiences/Experiences';
 import Loader from '../Loader/Loader';
+import Contact from '../Contact/Contact';
+import Portfolio from '../Portfolio/Portfolio';
+import Up from '../Up/Up';
+import Footer from '../Footer/Footer';
 
 function App() {
   // Initialise l'état par défaut du loader
@@ -45,9 +50,14 @@ function App() {
     <div className="App">
       {/* <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} /> */}
       <Home isDarkMode={isDarkMode} />
+
       <About />
-      <Skills />
       <Experiences />
+      <Skills />
+      <Portfolio />
+      <Contact />
+      <Up />
+      <Footer />
     </div>
   );
 }

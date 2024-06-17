@@ -1,7 +1,6 @@
 @use '../../styles/variables';
 
 .skills {
-  // background-color: red;
   width: 100%;
   margin: variables.$gutter auto;
   &-title {
@@ -11,6 +10,18 @@
     font-weight: 600;
     text-align: center;
     margin: 1em 0;
+    height: 32px;
+    overflow: hidden;
+
+    &--hidden {
+      opacity: 0;
+      height: 32px;
+      overflow: hidden;
+    }
+  }
+  &-text {
+    width: 86%;
+    margin: 0 auto variables.$gutter;
   }
   &-container {
     display: flex;
@@ -18,7 +29,7 @@
     // background-color: teal;
     width: 95%;
     justify-content: center;
-    margin: 0 auto;
+    margin: 0 auto variables.$gutter * 2;
     gap: 0.5em;
   }
 }
@@ -30,27 +41,47 @@
 
   // justify-content: center;
   // justify-content: space-evenly;
-  &-picture {
-    aspect-ratio: 1/1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ee8054;
-    border-radius: 5px;
+  // &-picture {
+  //   aspect-ratio: 1/1;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   background-color: #ee8054;
+  //   border-radius: 5px;
+  //   width: 100%;
+  //   margin-bottom: variables.$gutter * 0.3;
+  //   // background-size: 80%;
+  //   // background-repeat: no-repeat;
+  //   // background-position: center;
+  //   &--hidden {
+  //     visibility: hidden;
+  //   }
+  // }
+  // &-icon {
+  //   scale: 3;
+  //   color: variables.$lightTextColor;
+  // }
+  &-icon {
     width: 100%;
-    margin-bottom: variables.$gutter * 0.3;
-    // background-size: 80%;
-    // background-repeat: no-repeat;
-    // background-position: center;
-    &--hidden {
-      visibility: hidden;
+    height: 100%;
+    border-radius: 3px;
+    background-color: #ee8054;
+    color: variables.$lightTextColor;
+    padding: 1.5em;
+    transition: 0.3s;
+    font-size: 0.7em;
+
+    &:hover {
+      background-color: variables.$mainLightColor;
+      color: #ee8054;
+      border: 1px solid #ee8054;
+      scale: 0.95;
+      transition: 0.3s;
+      cursor: pointer;
     }
   }
-  &-icon {
-    scale: 3;
-    color: variables.$lightTextColor;
-  }
   &-stack {
+    margin-top: variables.$gutter * 0.2;
     color: variables.$darkTextColor;
     width: 100%;
     text-align: center;
@@ -58,8 +89,36 @@
     -webkit-animation: tracking-in-expand 0.7s
       cubic-bezier(0.215, 0.61, 0.355, 1) both;
     animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    &:hover {
+    }
     &--hidden {
       opacity: 0;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  width: 95%;
+  justify-content: space-evenly;
+  gap: 0.7em;
+  margin: 0 auto;
+  &-skill {
+    width: 35%;
+    padding: 10px 12px;
+    border: none;
+    box-shadow: 2px 2px 3px 1px #d1d1d1;
+    border-radius: 5px;
+    background-color: #183153;
+    color: variables.$lightTextColor;
+    font-weight: 700;
+    transition: 0.3s;
+    &--selected {
+      background-color: #18315370;
+      transition: 0.3s;
+      scale: 0.95;
+
+      // opacity: 0.8;
     }
   }
 }
@@ -103,27 +162,33 @@
   }
 }
 
-@-webkit-keyframes tracking-in-expand {
+.text-focus-in {
+  -webkit-animation: text-focus-in 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: text-focus-in 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@-webkit-keyframes text-focus-in {
   0% {
-    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
     opacity: 0;
   }
-  40% {
-    opacity: 0.6;
-  }
   100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
     opacity: 1;
   }
 }
-@keyframes tracking-in-expand {
+@keyframes text-focus-in {
   0% {
-    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
     opacity: 0;
   }
-  40% {
-    opacity: 0.6;
-  }
   100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
     opacity: 1;
   }
 }

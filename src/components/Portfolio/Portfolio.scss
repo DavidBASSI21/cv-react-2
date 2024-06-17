@@ -1,0 +1,47 @@
+@use '../../styles/variables';
+
+.portfolio {
+  // background-color: #121f23;
+  // background-color: white;
+  padding: 1em 0;
+  &-title {
+    font-size: variables.$fsStandard * 1.8;
+    // color: variables.$lightTextColor;
+    // width: 100vw;
+    height: 32px;
+    font-weight: 600;
+    // text-align: left;
+    margin: 1em 0 1em 1em;
+    text-decoration: underline;
+    overflow: hidden;
+    // opacity: 1;
+    &--hidden {
+      opacity: 0;
+      height: 32px;
+      overflow: hidden;
+      margin-top: 1em;
+      text-align: center;
+      font-size: variables.$fsStandard * 1.8;
+    }
+  }
+  &-text {
+    // color: variables.$lightTextColor;
+    width: 86%;
+    margin: 0 auto variables.$gutter;
+  }
+  &-hint {
+    // color: variables.$lightTextColor;
+    width: 86%;
+    margin: 0 auto variables.$gutter;
+    font-size: variables.$fsStandard * 0.7;
+  }
+}
+
+.flip-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 95%;
+  justify-content: center;
+  gap: variables.$gutter * 0.5;
+  margin: 0 auto variables.$gutter;
+}
