@@ -22,6 +22,7 @@ const IndividualProject = ({
               backgroundImage: `url(${picture})`,
               backgroundSize: 'contain',
               width: '100%',
+              backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
 
               // backgroundRepeat: 'no-repeat',

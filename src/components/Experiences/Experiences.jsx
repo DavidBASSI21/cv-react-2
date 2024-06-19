@@ -2,20 +2,21 @@ import './Experiences.scss';
 import { useEffect, useState } from 'react';
 import experiences from '../../data/experiences';
 import Experience from './Experience';
+import useMediaQuery from '../CustomHooks/useMediaQuery';
 
-const Experiences = () => {
+const Experiences = ({ isDesktop }) => {
   const [scrolled, setScrolled] = useState(false);
   const [showElements, setShowElements] = useState(false);
+  const scrollThreshold = isDesktop ? 50 : 600;
 
   const handleScroll = () => {
-    if (window.scrollY > 556) {
-      setScrolled(true);
-      setTimeout(() => {
-        setShowElements(true);
-      }, 700);
-    } else {
-      setScrolled(false);
-      setShowElements(false);
+    if (window.scrollY > scrollThreshold) {
+      if (!scrolled) {
+        setScrolled(true);
+        setTimeout(() => {
+          setShowElements(true);
+        }, 700);
+      }
     }
   };
 
@@ -40,10 +41,14 @@ const Experiences = () => {
         Expériences
       </h2>
       <div className="experiences-container">
-        <div className={showElements ? 'line fade-in-bottom' : ''} />
+        <div className={showElements ? 'line fade-in-bottom' : 'hidden'} />
         <div className="experience-container">
           {experiences.map((experience) => (
-            <Experience key={experience.id} {...experience} />
+            <Experience
+              key={experience.id}
+              {...experience}
+              isDesktop={isDesktop}
+            />
           ))}
         </div>
       </div>

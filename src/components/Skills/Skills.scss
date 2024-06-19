@@ -4,15 +4,12 @@
   width: 100%;
   margin: variables.$gutter auto;
   &-title {
-    font-size: variables.$fsStandard * 2;
-    color: variables.$darkTextColor;
-    width: 100vw;
-    font-weight: 600;
-    text-align: center;
-    margin: 1em 0;
+    font-size: variables.$fsStandard * 1.8;
     height: 32px;
+    font-weight: 600;
+    margin: 1em 0 1em 1em;
+    text-decoration: underline;
     overflow: hidden;
-
     &--hidden {
       opacity: 0;
       height: 32px;
@@ -22,6 +19,8 @@
   &-text {
     width: 86%;
     margin: 0 auto variables.$gutter;
+    text-align: justify;
+    hyphens: auto;
   }
   &-container {
     display: flex;
@@ -29,7 +28,7 @@
     // background-color: teal;
     width: 95%;
     justify-content: center;
-    margin: 0 auto variables.$gutter * 2;
+    margin: 0 auto variables.$gutter;
     gap: 0.5em;
   }
 }
@@ -38,34 +37,11 @@
   display: flex;
   flex-direction: column;
   width: calc(21%);
-
-  // justify-content: center;
-  // justify-content: space-evenly;
-  // &-picture {
-  //   aspect-ratio: 1/1;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   background-color: #ee8054;
-  //   border-radius: 5px;
-  //   width: 100%;
-  //   margin-bottom: variables.$gutter * 0.3;
-  //   // background-size: 80%;
-  //   // background-repeat: no-repeat;
-  //   // background-position: center;
-  //   &--hidden {
-  //     visibility: hidden;
-  //   }
-  // }
-  // &-icon {
-  //   scale: 3;
-  //   color: variables.$lightTextColor;
-  // }
   &-icon {
     width: 100%;
     height: 100%;
     border-radius: 3px;
-    background-color: #ee8054;
+    background-color: #f9682e;
     color: variables.$lightTextColor;
     padding: 1.5em;
     transition: 0.3s;
@@ -73,8 +49,8 @@
 
     &:hover {
       background-color: variables.$mainLightColor;
-      color: #ee8054;
-      border: 1px solid #ee8054;
+      color: #f9682e;
+      border: 1px solid #f9682e;
       scale: 0.95;
       transition: 0.3s;
       cursor: pointer;
@@ -120,6 +96,31 @@
 
       // opacity: 0.8;
     }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .skills-desktop {
+    &-container {
+      display: flex;
+      width: 90%;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+    &-hard,
+    &-soft {
+      width: 49%;
+    }
+  }
+  .skills-title {
+    margin: 1em 0 1em 1em;
+  }
+  .skills-text {
+    height: 80px;
+    margin: 0 1em 0 2em;
+  }
+  .skills-container {
+    justify-content: space-evenly;
   }
 }
 

@@ -2,24 +2,36 @@
 import DOMPurify from 'dompurify';
 import PropTypes from 'prop-types';
 import './Experience.scss';
-
+import { FaRegCalendarAlt } from 'react-icons/fa';
+import { RiMapPin2Line } from 'react-icons/ri';
+import { MdOutlineWorkOutline } from 'react-icons/md';
 import { useState, useEffect } from 'react';
+import useMediaQuery from '../CustomHooks/useMediaQuery';
 
-const Experience = ({ iconUrl, title, location, date, description }) => {
+const Experience = ({
+  iconUrl,
+  title,
+  location,
+  date,
+  description,
+  isDesktop,
+}) => {
   const [scrolled, setScrolled] = useState(false);
   const [showElements, setShowElements] = useState(false);
   const [spin, setSpin] = useState(false);
-
+  const scrollThreshold = isDesktop ? 50 : 600;
   const handleScroll = () => {
-    if (window.scrollY > 650) {
-      setScrolled(true);
-      setTimeout(() => {
-        setShowElements(true);
-      }, 800);
-    } else {
-      setScrolled(false);
-      setShowElements(false);
-      setSpin(false);
+    if (window.scrollY > scrollThreshold) {
+      if (!scrolled) {
+        // Only update state if it hasn't been scrolled past the threshold before
+        setScrolled(true);
+        setTimeout(() => {
+          setShowElements(true);
+        }, 800);
+        setTimeout(() => {
+          setSpin(true);
+        }, 900);
+      }
     }
   };
 
@@ -36,62 +48,73 @@ const Experience = ({ iconUrl, title, location, date, description }) => {
     if (showElements) {
       setTimeout(() => {
         setSpin(true);
-      }, 900);
+      }, 100);
     }
   }, [showElements]);
   const markup = { __html: DOMPurify.sanitize(description) };
 
   return (
     <div className="individualExperience-container">
-      <span
-        className={`${
+      <div
+        className={
           showElements
-            ? 'individualExperience-bullet roll-in-blurred-left'
-            : 'individualExperience-bullet hidden'
-        } ${spin ? 'spin' : ''}`}
-        style={{
-          backgroundImage: `url(${iconUrl})`,
-        }}
-      />
+            ? 'individualExperience-container-bullet '
+            : 'individualExperience-container hidden'
+        }
+      >
+        <span
+          className={`${
+            showElements
+              ? 'individualExperience-bullet '
+              : 'individualExperience-bullet hidden'
+          } ${spin ? 'spin' : ''}`}
+          style={{
+            backgroundImage: `url(${iconUrl})`,
+          }}
+        />
+      </div>
 
-      <h2
-        className={
-          showElements
-            ? 'individualExperience-title slide-in-right'
-            : 'individualExperience-title hidden'
-        }
-      >
-        {title}
-      </h2>
-      <h3
-        className={
-          showElements
-            ? 'individualExperience-location slide-in-right'
-            : 'individualExperience-location hidden'
-        }
-      >
-        {location}{' '}
-      </h3>
-      <h4
-        className={
-          showElements
-            ? 'individualExperience-date slide-in-right'
-            : 'individualExperience-date hidden'
-        }
-      >
-        {date}
-      </h4>
-      <p
-        className={
-          showElements
-            ? 'individualExperience-description slide-in-right'
-            : 'individualExperience-description hidden'
-        }
-        dangerouslySetInnerHTML={markup}
-      />
+      <div className="individualExperience-container-text">
+        <h2
+          className={
+            showElements
+              ? 'individualExperience-title slide-in-right'
+              : 'individualExperience-title hidden'
+          }
+        >
+          <MdOutlineWorkOutline size={20} /> {title}
+        </h2>
+        <h3
+          className={
+            showElements
+              ? 'individualExperience-location slide-in-right'
+              : 'individualExperience-location hidden'
+          }
+        >
+          <RiMapPin2Line size={18} /> {location}
+        </h3>
+        <h4
+          className={
+            showElements
+              ? 'individualExperience-date slide-in-right'
+              : 'individualExperience-date hidden'
+          }
+        >
+          <FaRegCalendarAlt /> {date}
+        </h4>
+        <p
+          className={
+            showElements
+              ? 'individualExperience-description slide-in-right'
+              : 'individualExperience-description hidden'
+          }
+          dangerouslySetInnerHTML={markup}
+        />
+      </div>
     </div>
   );
 };
+
 Experience.propTypes = {
   iconUrl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

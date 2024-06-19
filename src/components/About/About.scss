@@ -2,8 +2,8 @@
 
 .about-container {
   display: flex;
-  background-color: #111f24;
-  background-color: #fefff6;
+  // background-color: #111f24;
+  // background-color: #fefff6;
 
   flex-direction: column;
   width: 100%;
@@ -52,6 +52,26 @@
     hyphens: auto;
     &-strong {
       font-weight: 600;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .about-container {
+    // background-color: red;
+    margin: auto;
+    height: fit-content;
+  }
+  .about {
+    &-title {
+      font-size: variables.$fsStandard * 2.5;
+      &-img {
+        width: 45px;
+      }
+    }
+    &-paragraph {
+      font-size: variables.$fsStandard * 1;
+      line-height: variables.$gutter * 0.7;
     }
   }
 }

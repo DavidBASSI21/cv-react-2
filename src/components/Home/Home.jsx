@@ -2,8 +2,9 @@ import PropTypes from 'prop-types';
 import './Home.scss';
 import cv from '../../assets/cv-david-bassi.pdf';
 import pp from '../../assets/pictures/pp.webp';
+import About from '../About/About';
 
-const Home = ({ isDarkMode }) => {
+const Home = ({ isDarkMode, isDesktop }) => {
   console.log(cv);
 
   const scrollToContactElement = () => {
@@ -45,45 +46,39 @@ const Home = ({ isDarkMode }) => {
       </div>
     </div>
     */
-    <div className="home-container">
-      <div
-        className="home-header"
-        style={{
-          backgroundImage: `url(${pp})`,
-          backgroundSize: '140%',
-          backgroundPosition: 'center',
-        }}
-      />
+    <div className="home-desktop-container">
+      <div className="home-container">
+        <div
+          className="home-header"
+          style={{
+            backgroundImage: `url(${pp})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
 
-      <div className="home-title-container">
-        <h1 className="home-title">David Bassi</h1>
-        <h2 className="home-subtitle">Développeur web </h2>
+        <div className="home-title-container">
+          <h1 className="home-title">David Bassi</h1>
+          <h2 className="home-subtitle">Développeur web </h2>
+        </div>
+        <div className="buttons-container">
+          <button
+            type="button"
+            className="button button-contact"
+            onClick={scrollToContactElement}
+          >
+            <span>Contactez-moi</span>
+          </button>
+          <button type="button" className="button button-cv">
+            <span>Télécharger mon CV</span>
+          </button>
+        </div>
       </div>
-      <div className="buttons-container">
-        <button
-          type="button"
-          className="button button-contact"
-          onClick={scrollToContactElement}
-        >
-          <span>Contactez-moi</span>
-        </button>
-        <button type="button" className="button button-cv">
-          <span>Télécharger mon CV</span>
-        </button>
-      </div>
-      {/* <div className="card-download-link-container">
-        <a
-          className={
-            isDarkMode
-              ? ' card-download-link card-download-link--dark'
-              : 'card-download-link'
-          }
-          href={cv}
-          download="cv-david-bassi.pdf"
-        >
-          Télécharger mon CV
-        </a>
-      </div> */}
+      {isDesktop && (
+        <div className="about-desktop">
+          <About />
+        </div>
+      )}
     </div>
   );
 };

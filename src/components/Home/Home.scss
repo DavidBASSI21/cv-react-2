@@ -1,114 +1,5 @@
 @use '../../styles/variables';
 
-// .card {
-//   // position: absolute;
-//   // top: 8vh;
-//   // left: 50%;
-
-//   display: flex;
-//   flex-direction: column;
-//   // align-items: center;
-//   margin: 2em auto;
-//   width: 75%;
-//   height: 500px;
-//   border-radius: 30px;
-//   // align-items: baseline;
-//   justify-content: flex-end;
-//   &--dark {
-//     background: #212121;
-//     box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
-//   }
-//   &--light {
-//     background: #fcfcfc;
-//     box-shadow: 15px 15px 30px rgb(0, 0, 0, 0.09),
-//       -15px -15px 30px rgb(0, 0, 0, 0.09);
-//   }
-// }
-
-// .card-picture {
-//   display: flex;
-//   width: 90%;
-//   height: 48%;
-//   border-radius: 1.6em;
-//   // border-top-left-radius: 1.6em;
-//   // aspect-ratio: 1/1;
-//   // border-radius: 2em;
-//   margin: 0 auto variables.$gutter * 1.1;
-//   box-shadow: -15px -15px 30px rgb(0, 0, 0, 0.09);
-// }
-
-// .card-title-container {
-//   justify-content: center;
-//   margin-bottom: variables.$gutter * 1.4;
-//   display: flex;
-//   flex-direction: column;
-//   width: 100%;
-//   text-align: center;
-//   .card-title {
-//     margin-bottom: variables.$gutter * 0.4;
-//     font-size: variables.$fsStandard * 1.5;
-//     font-weight: 700;
-//   }
-//   .card-subtitle {
-//     font-weight: 400;
-//     font-size: variables.$fsStandard * 1.2;
-//   }
-//   // .card-titles {
-//   //   text-align: center;
-//   // }
-// }
-
-// .card-download-link-container {
-//   display: flex;
-//   width: 100%;
-//   justify-content: center;
-//   // align-items: flex-end;
-//   text-align: center;
-// }
-// .card-download-link {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   width: 15em;
-//   height: 4em;
-//   border-radius: 30em;
-//   font-size: variables.$fsStandard * 0.8;
-//   margin-bottom: variables.$gutter * 2;
-//   border: none;
-//   position: relative;
-//   overflow: hidden;
-//   z-index: 1;
-//   box-shadow: 3px 5px 12px #c5c5c5, -6px -6px 12px #ffffff;
-//   color: variables.$darkTextColor;
-//   transition: color 0.5s ease;
-//   &--dark {
-//     color: variables.$lightTextColor;
-//     box-shadow: 6px 6px 12px rgb(25, 25, 25), -6px -6px 12px rgb(60, 60, 60);
-//   }
-//   &:active {
-//     transition: 0.7s;
-//     transform: scale(0.95);
-//   }
-//   &::before {
-//     content: '';
-//     width: 0;
-//     height: 100%;
-//     border-radius: 30em;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     background-image: linear-gradient(to right, #8758ef 0%, #c500f6 100%);
-//     transition: width 0.5s ease;
-//     z-index: -1;
-//   }
-//   &:hover {
-//     color: white;
-//   }
-//   &:hover::before {
-//     width: 100%;
-//   }
-// }
-
 .home {
   &-container {
     display: flex;
@@ -161,11 +52,12 @@
   align-items: center;
   border-radius: 5px;
   width: 40%;
-  background: #183153;
+  background: #094493;
   // font-family: 'Montserrat', sans-serif;
   box-shadow: 15px 10px 24px 0px rgb(0 0 0 / 35%);
   overflow: hidden;
   cursor: pointer;
+
   border: none;
   transition: 0.3s;
 
@@ -179,7 +71,7 @@
   content: ' ';
   width: 0%;
   height: 100%;
-  background: #f49974;
+  background: #f9682e;
   position: absolute;
   transition: all 0.4s ease-in-out;
   right: 0;
@@ -199,7 +91,7 @@
 
   color: #fff;
   // font-size: 1.125em;
-  font-weight: 700;
+  font-weight: 600;
   // letter-spacing: 0.2em;
   z-index: 20;
   transition: all 0.3s ease-in-out;
@@ -225,45 +117,32 @@
 }
 
 @media screen and (min-width: 768px) {
-  .home-container {
-    height: 25vh;
-    position: relative;
+  .home-desktop-container {
+    display: flex;
+    width: 100%;
+    height: 60vh;
   }
   .home-header {
-    width: 200px;
-    height: 200px;
-    border-radius: 400px;
-    position: absolute;
-    top: 5%;
-    right: 20%;
+    height: 60vh;
   }
-  .home-title-container {
-    color: variables.$darkTextColor;
-    // position: absolute;
-  }
-  .home-title {
-    position: absolute;
-    text-align: left;
-    top: 45%;
-    left: 25%;
-    font-size: variables.$fsStandard * 2.5;
-    text-transform: uppercase;
-    width: 300px;
-  }
-  .home-subtitle {
-    position: absolute;
-    text-align-last: left;
-    top: 60%;
-    left: 26.5%;
+  .home-container {
+    width: 30%;
+    position: relative;
+    margin: 0;
   }
   .buttons-container {
     position: absolute;
-    top: 100%;
-    width: 100%;
-    margin: 0 auto;
+    top: 85%;
   }
   .button {
-    width: 10%;
-    // background: red;
+    padding: 10px 0px;
+    width: 35%;
+  }
+  .about-desktop {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    height: 60vh;
+    padding: 20px;
   }
 }

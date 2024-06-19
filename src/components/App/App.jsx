@@ -14,11 +14,14 @@ import Contact from '../Contact/Contact';
 import Portfolio from '../Portfolio/Portfolio';
 import Up from '../Up/Up';
 import Footer from '../Footer/Footer';
+import useMediaQuery from '../CustomHooks/useMediaQuery';
 
 function App() {
   // Initialise l'état par défaut du loader
   const [isLoading, setIsLoading] = useState(true);
 
+  // Détermine si l'utilisateur est sur desktop ou non
+  const isDesktop = useMediaQuery('(min-width: 768px)');
   // Initialise l'état à partir de localStorage
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedMode = localStorage.getItem('darkMode');
@@ -49,11 +52,11 @@ function App() {
   return (
     <div className="App">
       {/* <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} /> */}
-      <Home isDarkMode={isDarkMode} />
+      <Home isDarkMode={isDarkMode} isDesktop={isDesktop} />
 
-      <About />
-      <Experiences />
-      <Skills />
+      {!isDesktop && <About />}
+      <Experiences isDesktop={isDesktop} />
+      <Skills isDesktop={isDesktop} />
       <Portfolio />
       <Contact />
       <Up />

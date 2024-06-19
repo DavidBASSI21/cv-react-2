@@ -37,7 +37,9 @@ const Portfolio = () => {
         Projets
       </h2>
       <p className="portfolio-text">
-        Découvrez ci-dessous quelques unes de mes réalisations.
+        Découvrez une sélection de mes projets, mettant en avant mes compétences
+        en développement web à travers diverses réalisations. Cette section est
+        vouée à se développer au fil de mes projets.
       </p>
       <p className="portfolio-hint">
         {' '}

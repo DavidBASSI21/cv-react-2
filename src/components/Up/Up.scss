@@ -1,6 +1,6 @@
 .up-button {
   position: fixed;
-  bottom: 12%;
+  bottom: 14%;
   right: 10%;
   width: 50px;
   height: 50px;
@@ -16,7 +16,6 @@
   transition-duration: 0.5s;
   overflow: hidden;
   transition: 0.5s;
-  // position: relative;
 }
 
 .svgIcon {
@@ -32,12 +31,11 @@
   width: 140px;
   border-radius: 50px;
   transition-duration: 0.3s;
-  background-color: #ee8054;
+  background-color: #f9682e;
   align-items: center;
 }
 
 .up-button:hover .svgIcon {
-  /* width: 20px; */
   transition-duration: 0.3s;
 
   transform: translateY(-200%);
@@ -48,7 +46,6 @@
   bottom: -20px;
   content: 'Back to Top';
   color: white;
-  /* transition-duration: .3s; */
   font-size: 0px;
 }
 
@@ -56,6 +53,5 @@
   font-size: 13px;
   opacity: 1;
   bottom: unset;
-  /* transform: translateY(-30px); */
   transition-duration: 0.3s;
 }
