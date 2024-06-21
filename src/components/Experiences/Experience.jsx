@@ -54,7 +54,13 @@ const Experience = ({
   const markup = { __html: DOMPurify.sanitize(description) };
 
   return (
-    <div className="individualExperience-container">
+    <div
+      className={
+        showElements
+          ? 'individualExperience-container slide-in-right'
+          : 'individualExperience-container hidden '
+      }
+    >
       <div
         className={
           showElements
@@ -82,7 +88,7 @@ const Experience = ({
               : 'individualExperience-title hidden'
           }
         >
-          <MdOutlineWorkOutline size={20} /> {title}
+          <MdOutlineWorkOutline className="individualExperience-icon" /> {title}
         </h2>
         <h3
           className={
@@ -91,7 +97,7 @@ const Experience = ({
               : 'individualExperience-location hidden'
           }
         >
-          <RiMapPin2Line size={18} /> {location}
+          <RiMapPin2Line className="individualExperience-icon" /> {location}
         </h3>
         <h4
           className={
@@ -100,7 +106,8 @@ const Experience = ({
               : 'individualExperience-date hidden'
           }
         >
-          <FaRegCalendarAlt /> {date}
+          <FaRegCalendarAlt className="individualExperience-icon" />
+          {date}
         </h4>
         <p
           className={

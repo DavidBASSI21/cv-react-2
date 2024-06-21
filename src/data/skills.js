@@ -136,7 +136,7 @@ export default [
   {
     id: 20,
     IconComponent: FaRegClock,
-    name: 'Gestion du temps / stress',
+    name: 'Gestion du temps',
     category: 'softSkills',
   },
 ];

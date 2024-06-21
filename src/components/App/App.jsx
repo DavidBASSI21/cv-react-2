@@ -57,8 +57,8 @@ function App() {
       {!isDesktop && <About />}
       <Experiences isDesktop={isDesktop} />
       <Skills isDesktop={isDesktop} />
-      <Portfolio />
-      <Contact />
+      <Portfolio isDesktop={isDesktop} />
+      <Contact isDesktop={isDesktop} />
       <Up />
       <Footer />
     </div>

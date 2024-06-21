@@ -1,17 +1,20 @@
 import { IoCloseOutline } from 'react-icons/io5';
 import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { FcIdea } from 'react-icons/fc';
 import emailjs from '@emailjs/browser';
 import './Contact.scss';
+import useMediaQuery from '../CustomHooks/useMediaQuery';
 
-const Contact = () => {
+const Contact = ({ isDesktop }) => {
   const [scrolled, setScrolled] = useState(false);
+  const scrollThreshold = isDesktop ? 2600 : 4050;
 
   const handleScroll = () => {
-    if (window.scrollY > 4050) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
+    if (window.scrollY > scrollThreshold) {
+      if (!scrolled) {
+        setScrolled(true);
+      }
     }
   };
 
@@ -81,12 +84,12 @@ const Contact = () => {
           scrolled ? 'form-title focus-in-contract' : 'form-title--hidden'
         }
       >
-        Envie d&apos;en savoir plus ?
+        Contact
       </h2>
       <div className="contact-form-container" id="contact">
-        <p className="form-text">
-          N&apos;hésitez pas à me contacter pour obtenir plus
-          d&apos;informations
+        <p className="form-text hint">
+          <FcIdea size={18} /> N&apos;hésitez pas à me contacter pour obtenir
+          plus d&apos;informations
         </p>
         <form id="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className="name-container">

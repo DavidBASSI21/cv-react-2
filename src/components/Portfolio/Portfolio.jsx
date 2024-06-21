@@ -2,17 +2,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Portfolio.scss';
 import { useState, useEffect } from 'react';
 import portfolioDatas from '../../data/portfolio';
-
+import { FcIdea } from 'react-icons/fc';
 import IndividualProject from './IndividualProject';
+import useMediaQuery from '../CustomHooks/useMediaQuery';
 
-const Portfolio = () => {
+const Portfolio = ({ isDesktop }) => {
   const [scrolled, setScrolled] = useState(false);
-
+  const scrollThreshold = isDesktop ? 2000 : 2430;
   const handleScroll = () => {
-    if (window.scrollY > 2430) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
+    if (window.scrollY > scrollThreshold) {
+      if (!scrolled) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
     }
   };
 
@@ -41,9 +44,9 @@ const Portfolio = () => {
         en développement web à travers diverses réalisations. Cette section est
         vouée à se développer au fil de mes projets.
       </p>
-      <p className="portfolio-hint">
-        {' '}
-        Passez votre souris ou cliquez sur les cartes pour les retourner
+      <p className="hint">
+        <FcIdea size={17} /> Passez votre souris ou cliquez sur les cartes pour
+        les retourner
       </p>
       <div className="flip-card-container">
         {portfolioDatas.map((project) => (

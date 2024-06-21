@@ -2,8 +2,9 @@ import PropTypes from 'prop-types';
 
 import { useEffect, useState } from 'react';
 
-const IndividualSkill = ({ IconComponent, name }) => {
+const IndividualSkill = ({ IconComponent, name, active, onClick }) => {
   const [scrolled, setScrolled] = useState(false);
+  const [revealTooltip, setRevealTooltip] = useState(false);
 
   const handleScroll = () => {
     if (window.scrollY > 750) {
@@ -20,7 +21,7 @@ const IndividualSkill = ({ IconComponent, name }) => {
     };
   });
   return (
-    <div className="individualSkill">
+    <div className="individualSkill" onClick={onClick}>
       <div>
         <IconComponent
           size="1em"
@@ -28,7 +29,15 @@ const IndividualSkill = ({ IconComponent, name }) => {
           className="individualSkill-icon"
         />
       </div>
-      <div className="individualSkill-stack ">{name}</div>
+
+      <div
+        className={`individualSkill-stack ${
+          active ? 'individualSkill-stack--visible' : ''
+        }`}
+      >
+        <span className="individualSkill-tooltip">{name}</span>
+        <div className="individualSkill-triangle" />
+      </div>
     </div>
   );
 };

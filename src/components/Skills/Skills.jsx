@@ -2,11 +2,11 @@ import './Skills.scss';
 import { useState, useEffect } from 'react';
 import skillsData from '../../data/skills';
 import IndividualSkill from './IndividualSkills';
-import Button from './Button';
 import useMediaQuery from '../CustomHooks/useMediaQuery';
 const Skills = ({ isDesktop }) => {
   const [scrolled, setScrolled] = useState(false);
   const [category, setCategory] = useState('hardSkills');
+  const [activeSkill, setActiveSkill] = useState(null);
   const scrollThreshold = isDesktop ? 1136 : 1915;
 
   const handleScroll = () => {
@@ -28,6 +28,13 @@ const Skills = ({ isDesktop }) => {
     (skill) => skill.category === category
   );
 
+  const handleSKillClick = (skillId) => {
+    if (activeSkill === skillId) {
+      setActiveSkill(null);
+    } else {
+      setActiveSkill(skillId);
+    }
+  };
   const filteredHardSkills = skillsData.filter(
     (skill) => skill.category === 'hardSkills'
   );
@@ -86,56 +93,88 @@ const Skills = ({ isDesktop }) => {
           </p>
           <div className="skills-container">
             {filteredSkills.map((individualSkill) => (
-              <IndividualSkill key={individualSkill.id} {...individualSkill} />
+              <IndividualSkill
+                key={individualSkill.id}
+                {...individualSkill}
+                active={activeSkill === individualSkill.id}
+                onClick={() => {
+                  handleSKillClick(individualSkill.id);
+                  setTimeout(() => {
+                    setActiveSkill(null);
+                  }, 2500);
+                }}
+              />
             ))}
           </div>
         </>
       )}
-      <div className="skills-desktop-container">
-        <div className="skills-desktop-hard">
-          <h2
-            className={
-              scrolled
-                ? 'skills-title focus-in-contract'
-                : 'skills-title skills-title--hidden'
-            }
-          >
-            Hard Skills
-          </h2>
-          <p className="skills-text">
-            Voici un aperçu de mes compétences techniques. Ces technologies
-            incluent des langages de programmation, des frameworks et des outils
-            essentiels à mon travail en développement web.
-          </p>
-          <div className="skills-container">
-            {filteredHardSkills.map((individualSkill) => (
-              <IndividualSkill key={individualSkill.id} {...individualSkill} />
-            ))}
+      {isDesktop && (
+        <div className="skills-desktop-container">
+          <div className="skills-desktop-hard">
+            <h2
+              className={
+                scrolled
+                  ? 'skills-title focus-in-contract'
+                  : 'skills-title skills-title--hidden'
+              }
+            >
+              Hard Skills
+            </h2>
+            <p className="skills-text">
+              Voici un aperçu de mes compétences techniques. Ces technologies
+              incluent des langages de programmation, des frameworks et des
+              outils essentiels à mon travail en développement web.
+            </p>
+            <div className="skills-container">
+              {filteredHardSkills.map((individualSkill) => (
+                <IndividualSkill
+                  key={individualSkill.id}
+                  {...individualSkill}
+                  active={activeSkill === individualSkill.id}
+                  onClick={() => {
+                    handleSKillClick(individualSkill.id);
+                    setTimeout(() => {
+                      setActiveSkill(null);
+                    }, 2500);
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="skills-desktop-soft">
+            <h2
+              className={
+                scrolled
+                  ? 'skills-title focus-in-contract'
+                  : 'skills-title skills-title--hidden'
+              }
+            >
+              Soft Skills
+            </h2>
+            <p className="skills-text">
+              Les compétences suivantes illustrent mes qualités humaines. Ces
+              soft skills sont indispensables à mon travail et contribuent à mon
+              efficacité et à ma capacité à m'adapter à différents
+              environnements professionnels.
+            </p>
+            <div className="skills-container">
+              {filteredSoftSkills.map((individualSkill) => (
+                <IndividualSkill
+                  key={individualSkill.id}
+                  {...individualSkill}
+                  active={activeSkill === individualSkill.id}
+                  onClick={() => {
+                    handleSKillClick(individualSkill.id);
+                    setTimeout(() => {
+                      setActiveSkill(null);
+                    }, 2500);
+                  }}
+                />
+              ))}
+            </div>
           </div>
         </div>
-        <div className="skills-desktop-soft">
-          <h2
-            className={
-              scrolled
-                ? 'skills-title focus-in-contract'
-                : 'skills-title skills-title--hidden'
-            }
-          >
-            Soft Skills
-          </h2>
-          <p className="skills-text">
-            Les compétences suivantes illustrent mes qualités humaines. Ces soft
-            skills sont indispensables à mon travail et contribuent à mon
-            efficacité et à ma capacité à m'adapter à différents environnements
-            professionnels.
-          </p>
-          <div className="skills-container">
-            {filteredSoftSkills.map((individualSkill) => (
-              <IndividualSkill key={individualSkill.id} {...individualSkill} />
-            ))}
-          </div>
-        </div>
-      </div>
+      )}
     </main>
   );
 };

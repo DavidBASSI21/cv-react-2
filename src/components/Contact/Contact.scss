@@ -168,3 +168,13 @@
     }
   }
 }
+
+@media screen and (min-width: 768px) {
+  .form-title {
+    margin-left: 2.1em;
+  }
+
+  .contact-form-container {
+    width: 50%;
+  }
+}

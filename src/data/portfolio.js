@@ -7,7 +7,7 @@ export default [
     id: 1,
     title: 'CV & Portfolio',
     description:
-      "Ce portfolio m'a permis de mettre en pratique les notions apprises au cours de la formation. Il a été réalisé en react.",
+      "Ce CV en ligne m'a permis de mettre en pratique les connaissances acquises lors de ma spécialisation React. J'ai pu développer des compétences essentielles en création de composants interactifs, gestion d'état avec Hooks et intégration de bibliothèques tierces. Ce projet m'a également permis d'améliorer ma maîtrise du préprocesseur SASS. En appliquant les concepts de React à un projet concret, j'ai consolidé mon expertise et suis désormais prêt à relever de nouveaux défis professionnels dans le développement front-end.",
     picture: portfolioImage,
     isReady: true,
     siteUrl: 'https://surge-dist.surge.sh',

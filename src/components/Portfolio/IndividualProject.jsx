@@ -32,12 +32,14 @@ const IndividualProject = ({
           <div className="flip-card-technos">
             {technos.map((techno) => (
               // console.log(techno)
-              <div className="flip-card-techno">{techno}</div>
+              <div className="flip-card-techno" key={techno}>
+                {techno}
+              </div>
             ))}
           </div>
         </div>
         <div className="flip-card-back">
-          <div
+          {/* <div
             className="flip-card-header"
             style={{
               backgroundImage: `url(${picture})`,
@@ -47,7 +49,7 @@ const IndividualProject = ({
               // backgroundRepeat: 'no-repeat',
             }}
           />
-          <p className="flip-card-back-title">{title}</p>
+          <p className="flip-card-back-title">{title}</p> */}
           <p className="flip-card-back-description"> {description}</p>
 
           {isReady && (
