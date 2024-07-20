@@ -8,7 +8,7 @@ import NavbarMobile from './NavbarMobile/NavbarMobile';
 
 const Header = ({ isDarkMode, setIsDarkMode }) => {
   const [isNavbarHidden, setIsNavbarHidden] = useState(true);
-  console.log(isNavbarHidden);
+
   const ref = useRef();
 
   return (

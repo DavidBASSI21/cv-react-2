@@ -32,7 +32,7 @@ const IndividualProject = ({
           <p className="flip-card-title">{title}</p>
           <div className="flip-card-technos">
             {technos.map((techno) => (
-              // console.log(techno)
+
               <div className="flip-card-techno" key={techno}>
                 {techno}
               </div>
@@ -82,7 +82,7 @@ const IndividualProject = ({
 IndividualProject.propTypes = {
   title: PropTypes.string.isRequired,
   isReady: PropTypes.bool.isRequired,
-  techno: PropTypes.string.isRequired,
+  technos: PropTypes.arrayOf(PropTypes.string),
   picture: PropTypes.string.isRequired,
   siteUrl: PropTypes.string.isRequired,
   repoUrl: PropTypes.string.isRequired,

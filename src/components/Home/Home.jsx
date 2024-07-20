@@ -5,7 +5,7 @@ import pp from '../../assets/pictures/pp.webp';
 import About from '../About/About';
 
 const Home = ({ isDarkMode, isDesktop }) => {
-  console.log(cv);
+
 
   const scrollToContactElement = () => {
     const contactElement = document.getElementById('contact');

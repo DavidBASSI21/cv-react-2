@@ -36,7 +36,7 @@ const Experience = ({
   };
 
   useEffect(() => {
-    console.log(window.scrollY);
+
     window.addEventListener('scroll', handleScroll);
 
     return () => {
