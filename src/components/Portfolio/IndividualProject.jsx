@@ -22,6 +22,7 @@ const IndividualProject = ({
               backgroundImage: `url(${picture})`,
               backgroundSize: 'contain',
               width: '100%',
+              // height: '100%',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
 
@@ -60,7 +61,7 @@ const IndividualProject = ({
                 rel="noreferrer"
                 className="flip-card-back-link"
               >
-                J'accède au site{' '}
+                Accéder au site{' '}
               </a>
               <a
                 href={repoUrl}

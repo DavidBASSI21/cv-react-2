@@ -44,7 +44,7 @@ const Portfolio = ({ isDesktop }) => {
         en développement web à travers diverses réalisations. Cette section est
         vouée à se développer au fil de mes projets.
       </p>
-      <p className="hint">
+      <p className="portfolio-hint">
         <FcIdea size={17} /> Passez votre souris ou cliquez sur les cartes pour
         les retourner
       </p>

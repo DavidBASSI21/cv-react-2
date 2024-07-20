@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import skillsData from '../../data/skills';
 import IndividualSkill from './IndividualSkills';
 import useMediaQuery from '../CustomHooks/useMediaQuery';
+import { FcIdea } from 'react-icons/fc';
+
 const Skills = ({ isDesktop }) => {
   const [scrolled, setScrolled] = useState(false);
   const [category, setCategory] = useState('hardSkills');
@@ -91,6 +93,10 @@ const Skills = ({ isDesktop }) => {
               ? 'Voici un aperçu de mes compétences techniques. Ces technologies incluent des langages de programmation, des frameworks et des outils essentiels à mon travail en développement web.'
               : "Les compétences suivantes illustrent mes qualités humaines. Ces soft skills sont indispensables à mon travail et contribuent à mon efficacité et à ma capacité à m'adapter à différents environnements professionnels."}
           </p>
+          <p className="hint">
+            <FcIdea size={17} /> Cliquez sur chaque carte pour révéler la
+            compétence associée
+          </p>
           <div className="skills-container">
             {filteredSkills.map((individualSkill) => (
               <IndividualSkill
@@ -125,6 +131,10 @@ const Skills = ({ isDesktop }) => {
               incluent des langages de programmation, des frameworks et des
               outils essentiels à mon travail en développement web.
             </p>
+            <p className="hint">
+              <FcIdea size={17} /> Cliquez sur chaque carte pour révéler la
+              compétence associée
+            </p>
             <div className="skills-container">
               {filteredHardSkills.map((individualSkill) => (
                 <IndividualSkill
@@ -156,6 +166,10 @@ const Skills = ({ isDesktop }) => {
               soft skills sont indispensables à mon travail et contribuent à mon
               efficacité et à ma capacité à m'adapter à différents
               environnements professionnels.
+            </p>
+            <p className="hint">
+              <FcIdea size={17} /> Cliquez sur chaque carte pour révéler la
+              compétence associée
             </p>
             <div className="skills-container">
               {filteredSoftSkills.map((individualSkill) => (

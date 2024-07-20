@@ -19,13 +19,13 @@ export default [
     title: "Apo'calypse",
     picture: apocalypseImage,
     description:
-      "Projet de fin de formation réalisé en un mois. L'objectif était de réaliser un MVP dans un contexte professionnel.",
+      "Ce projet de fin de formation a été réalisé de A à Z dans un délai imparti d'un mois réparti en 4 sprints. Il s'agissait ici de rédiger le cahier des charges, la charte graphique, construire les wireframes et maquettes dans le but de réaliser un MVP. Certains bugs n'ont pas encore pu être corrigés (actualisation de la page par exemple).",
     // picture:
     //   'https://www.copycat.dev/blog/wp-content/uploads/2022/12/REact-Redux.png',
-    isReady: false,
-    siteUrl: '',
-    repoUrl: '',
-    technos: ['ReactJs', 'Redux', 'SaSS', 'Symfony'],
+    isReady: true,
+    siteUrl: 'https://www.apocalypse.davidbassi.fr/',
+    repoUrl: 'https://github.com/O-clock-Liegeois/projet-17-apo-calypse-front',
+    technos: ['ReactJs', 'Redux', 'Sass', 'Symfony'],
   },
   {
     id: 3,
@@ -36,6 +36,6 @@ export default [
     isReady: false,
     siteUrl: '',
     repoUrl: '',
-    technos: ['ReactJS', 'SaSS'],
+    technos: ['ReactJS', 'Sass'],
   },
 ];

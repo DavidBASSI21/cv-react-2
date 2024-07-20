@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import './Home.scss';
-import cv from '../../assets/cv-david-bassi.pdf';
+import cv from '../../../public/cv--david-bassi.pdf'
 import pp from '../../assets/pictures/pp.webp';
 import About from '../About/About';
 
@@ -69,9 +69,12 @@ const Home = ({ isDarkMode, isDesktop }) => {
           >
             <span>Contactez-moi</span>
           </button>
-          <button type="button" className="button button-cv">
+         
+          <a href={cv} download="cv--david-bassi.pdf" target='_blank' >
+          <button type="button" className="button button-cv" >
             <span>Télécharger mon CV</span>
           </button>
+          </a>
         </div>
       </div>
       {isDesktop && (

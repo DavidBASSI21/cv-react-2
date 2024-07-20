@@ -1,6 +1,7 @@
 import './About.scss';
 import main from '../../assets/pictures/main.svg';
 
+
 const About = () => {
   return (
     <div className="about-container">
@@ -21,16 +22,7 @@ const About = () => {
           .
         </p>
         <p className="about-paragraph">
-          À la recherche d&apos;un{' '}
-          <strong className="about-paragraph-strong">
-            contrat de professionnalisation{' '}
-          </strong>
-          (rythme de 1 semaine à l&apos;école et 2 semaines en entreprise) pour
-          une{' '}
-          <strong className="about-paragraph-strong">
-            rentrée au 14 octobre 2024
-          </strong>
-          , il me tarde d&apos;intégrer une entreprise où je pourrai continuer à
+          À la recherche d&apos;un premier emploi, il me tarde d&apos;intégrer une entreprise où je pourrai continuer à
           développer les compétences et connaissances acquises au cours de ma
           formation.
         </p>

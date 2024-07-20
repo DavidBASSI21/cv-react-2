@@ -86,11 +86,11 @@ const Contact = ({ isDesktop }) => {
       >
         Contact
       </h2>
+      <p className="contact-hint">
+      N&apos;hésitez pas à me contacter en remplissant le formulaire ci-dessous pour obtenir plus
+       d&apos;informations. Je me ferai un plaisir de vous répondre dans les meilleurs délais.
+      </p>
       <div className="contact-form-container" id="contact">
-        <p className="form-text hint">
-          <FcIdea size={18} /> N&apos;hésitez pas à me contacter pour obtenir
-          plus d&apos;informations
-        </p>
         <form id="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className="name-container">
             <div className="formInput-name-container">

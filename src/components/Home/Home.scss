@@ -45,14 +45,13 @@
 
 .button {
   padding: 5px 12px;
-
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  width: 40%;
-  background: #094493;
+  width: fit-content;
+  background: #183153;
   // font-family: 'Montserrat', sans-serif;
   box-shadow: 15px 10px 24px 0px rgb(0 0 0 / 35%);
   overflow: hidden;
@@ -137,7 +136,7 @@
   }
   .button {
     padding: 10px 0px;
-    width: 35%;
+    width: fit-content;
   }
   .about-desktop {
     display: flex;

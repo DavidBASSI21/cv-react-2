@@ -4,6 +4,7 @@
   // background-color: #5a818b;
   // background-color: white;
   padding: 1em 0;
+  width: 100%;
 
   &-title {
     font-size: variables.$fsStandard * 1.8;
@@ -34,13 +35,14 @@
     line-height: 1.8;
   }
 }
-.hint {
+.portfolio-hint {
   // color: variables.$lightTextColor;
-  width: 86%;
-  margin: 0 auto variables.$gutter;
+  width: 87%;
+  margin: 0 auto 1.5em;
   font-size: variables.$fsStandard * 0.7;
   border-left: 1px solid black;
   padding-left: 5px;
+  line-height: 1.8;
 }
 
 .flip-card-container {
@@ -54,18 +56,21 @@
 
 @media screen and (min-width: 768px) {
   .portfolio {
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
     &-title {
-      margin-left: 2.1em;
+      width: 87%;
+      margin: 0 auto 1.5em;
     }
     &-text {
-      margin: 0 0 2em 3.6em;
+      width: 87%;
+      margin: 0 auto 1.5em;
     }
   }
 
-  .hint {
-    margin: 0 0 3em 4.8em;
-    font-size: 0.9rem;
+  .portfolio-hint {
+    width: 87%;
+    margin: 0 auto 3.5em;
+    font-size: 0.8rem;
   }
 }
